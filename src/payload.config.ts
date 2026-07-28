@@ -1,3 +1,6 @@
+import 'dotenv/config'
+import { getPayload } from 'payload'
+import config from '@payload-config'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'

@@ -1,14 +1,20 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
+import { notFound } from 'next/navigation'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
-export default async function HomePage() {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
   const payload = await getPayload({ config })
 
   const result = await payload.find({
     collection: 'pages',
     where: {
-      slug: { equals: 'home' },
+      slug: { equals: slug },
     },
     limit: 1,
   })
@@ -16,7 +22,7 @@ export default async function HomePage() {
   const page = result.docs[0]
 
   if (!page) {
-    return <main style={{ padding: '2rem' }}>Страница "home" ещё не создана в админке.</main>
+    return notFound()
   }
 
   return (
