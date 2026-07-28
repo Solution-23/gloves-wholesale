@@ -21,7 +21,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="ru">
       <body>
-        <header style={{ borderBottom: '1px solid #ddd', padding: '1rem 2rem' }}>
+        <header>
           <nav style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>

@@ -16,13 +16,13 @@ export default async function HomePage() {
   const page = result.docs[0]
 
   if (!page) {
-    return <main style={{ padding: '2rem' }}>Страница "home" ещё не создана в админке.</main>
-  }
+  return <main>Страница "home" ещё не создана в админке.</main>
+}
 
   return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
-      <h1>{page.title}</h1>
-      <RichText data={page.content} />
-    </main>
-  )
+  <main>
+    <h1>{page.title}</h1>
+    <RichText data={page.content} />
+  </main>
+)
 }

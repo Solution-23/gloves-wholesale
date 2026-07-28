@@ -25,10 +25,10 @@ export default async function Page({
     return notFound()
   }
 
-  return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
-      <h1>{page.title}</h1>
-      <RichText data={page.content} />
-    </main>
-  )
+ return (
+  <main>
+    <h1>{page.title}</h1>
+    <RichText data={page.content} />
+  </main>
+)
 }
